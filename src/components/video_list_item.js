@@ -1,27 +1,26 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const VideoListItem = ({video}) => {
-    console.log(video);
-    const imgUrl = video.snippet.thumbnails.default.url;
-    return (
-        <li className="list-group-item">
-            <div className="video-list media">
-                <div className="media-left">
-                    <img className="media-object" src={imgUrl} />
-                </div>
-                <div className="media-body">
-                    <div className="media-heading"> 
-                        {video.snippet.title}
-                    </div>
-                </div>
-            </div>
-        </li>
-    );
+const VideoListItem = ({ video, onVideoSelect }) => {
+  console.log(video);
+  const imgUrl = video.snippet.thumbnails.default.url;
+  return (
+    <li onClick={() => onVideoSelect(video)} className="list-group-item">
+      <div className="video-list media">
+        <div className="media-left">
+          <img className="media-object" src={imgUrl} />
+        </div>
+        <div className="media-body">
+          <div className="media-heading">{video.snippet.title}</div>
+        </div>
+      </div>
+    </li>
+  );
 };
 
 export default VideoListItem;
 
 VideoListItem.propTypes = {
-  video: PropTypes.object
+  video: PropTypes.object,
+  onVideoSelect: PropTypes.func
 };
