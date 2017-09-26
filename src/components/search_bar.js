@@ -1,6 +1,5 @@
 //User types input make API request to YouTube API
 
-
 import React, { Component } from 'react';
 
 class SearchBar extends Component {

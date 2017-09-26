@@ -1,5 +1,6 @@
 import React from "react";
 import VideoListItem from "./video_list_item";
+import PropTypes from 'prop-types';
 
 const VideoList = props => {
   const videoItems = props.videos.map(video => {
@@ -10,3 +11,7 @@ const VideoList = props => {
 };
 
 export default VideoList;
+
+VideoList.propTypes = {
+  videos: PropTypes.array
+};

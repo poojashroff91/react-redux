@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const VideoListItem = ({video}) => {
     console.log(video);
@@ -20,3 +21,7 @@ const VideoListItem = ({video}) => {
 };
 
 export default VideoListItem;
+
+VideoListItem.propTypes = {
+  video: PropTypes.object
+};
